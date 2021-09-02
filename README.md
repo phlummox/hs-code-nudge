@@ -58,6 +58,12 @@ $ stack --stack-yaml stack-lts-13.yaml build
 [gnu-shl-lib]: https://www.gnu.org/software/src-highlite/source-highlight-lib.html
 [stack]: https://github.com/commercialhaskell/stack
 
+Assuming all goes well, you can then install it to `~/.local/bin` with
+
+```
+$ stack --stack-yaml stack-lts-13.yaml install
+```
+
 ## Limitations
 
 code-nudge detects any line of text in a comment which (after stripping leading
