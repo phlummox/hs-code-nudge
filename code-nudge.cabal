@@ -1,0 +1,81 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 709a9292c4b798bb01e1a826c60a817208d3615296ae67d2aafb00721087a77f
+
+name:           code-nudge
+version:        0.1.0.0
+synopsis:       Extract TODOs and FIXMEs from source code
+description:    Please see the README on GitHub at <https://github.com/phlummox/hs-code-nudge#readme>
+category:       Development
+homepage:       https://github.com/phlummox/hs-code-nudge#readme
+bug-reports:    https://github.com/phlummox/hs-code-nudge/issues
+author:         Phlummox
+maintainer:     hs-code-nudge@phlummox.dev
+copyright:      2021 Phlummox
+license:        BSD2
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    Changelog.md
+
+source-repository head
+  type: git
+  location: https://github.com/phlummox/hs-code-nudge
+
+library
+  exposed-modules:
+      CodeNudge
+  other-modules:
+      Paths_code_nudge
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -fwarn-tabs
+  extra-libraries:
+      source-highlight
+      boost_regex
+  pkgconfig-depends:
+      source-highlight
+  build-depends:
+      base >=4.7 && <5
+    , filemanip
+    , inline-c
+    , inline-c-cpp >=0.3.1.0
+    , mtl
+  if impl(ghc >= 8.0)
+    ghc-options: -Wredundant-constraints -Wno-type-defaults -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-name-shadowing -Wextra
+  if impl(ghc >= 8.2)
+    ghc-options: -fhide-source-paths
+  if impl(ghc >= 8.4)
+    ghc-options: -Wmissing-export-lists -Wpartial-fields
+  if impl(ghc >= 8.8)
+    ghc-options: -Wmissing-deriving-strategies
+  default-language: Haskell2010
+
+executable code-nudge
+  main-is: Main.hs
+  other-modules:
+      Paths_code_nudge
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -fwarn-tabs -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , code-nudge
+    , filemanip
+    , inline-c
+    , inline-c-cpp >=0.3.1.0
+    , mtl
+  if impl(ghc >= 8.0)
+    ghc-options: -Wredundant-constraints -Wno-type-defaults -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-name-shadowing -Wextra
+  if impl(ghc >= 8.2)
+    ghc-options: -fhide-source-paths
+  if impl(ghc >= 8.4)
+    ghc-options: -Wmissing-export-lists -Wpartial-fields
+  if impl(ghc >= 8.8)
+    ghc-options: -Wmissing-deriving-strategies
+  default-language: Haskell2010

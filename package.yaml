@@ -1,0 +1,83 @@
+name:       code-nudge
+version:    0.1.0.0
+category:   Development
+author:     Phlummox
+maintainer: hs-code-nudge@phlummox.dev
+copyright:  2021 Phlummox
+license:    BSD2
+github:     phlummox/hs-code-nudge
+synopsis:   Extract TODOs and FIXMEs from source code
+description:
+     Please see the README on GitHub at <https://github.com/phlummox/hs-code-nudge#readme>
+
+extra-source-files:
+- README.md
+- Changelog.md
+
+dependencies:
+- inline-c-cpp >= 0.3.1.0
+- inline-c
+- filemanip
+- mtl
+
+ghc-options:
+    -Wall
+    -fwarn-tabs
+
+when:
+  - condition: impl(ghc >= 8.0)
+    ghc-options:        -Wredundant-constraints
+                        -Wno-type-defaults
+                        -Wcompat
+                        -Widentities
+                        -Wincomplete-record-updates
+                        -Wincomplete-uni-patterns
+                        -Wno-name-shadowing
+                        -Wextra
+
+  - condition: impl(ghc >= 8.2)
+    ghc-options:        -fhide-source-paths
+
+  - condition: impl(ghc >= 8.4)
+    ghc-options:        -Wmissing-export-lists
+                        -Wpartial-fields
+
+  - condition: impl(ghc >= 8.8)
+    ghc-options:        -Wmissing-deriving-strategies
+
+
+library:
+  source-dirs: src
+  extra-libraries:
+  - source-highlight
+  - boost_regex
+  pkg-config-dependencies:
+  - source-highlight
+  dependencies:
+  - base >=4.7 && <5
+
+executables:
+  code-nudge:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - code-nudge
+
+#tests:
+#  code-nudge-test:
+#    main: Spec.hs
+#    source-dirs: test
+#    ghc-options:
+#    - -threaded
+#    - -rtsopts
+#    - -with-rtsopts=-N
+#    dependencies:
+#    - base
+#    - code-nudge
+#    - hspec
+#    - QuickCheck

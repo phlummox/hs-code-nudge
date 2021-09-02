@@ -1,0 +1,10 @@
+resolver: lts-13.30
+
+packages:
+- .
+
+extra-deps:
+- inline-c-cpp-0.4.0.3@sha256:afebd9a9e710da8097d647e1f05b7ba5a6b411e7fdc0ad02c4748b007f83af02,3605
+- inline-c-0.9.1.5@sha256:15bc8bd145637aa4e8779b14f1e3cacfb05705775c0e54cf12b59a41cf76d2d4,3278
+
+# flags: {}
