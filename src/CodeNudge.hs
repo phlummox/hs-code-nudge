@@ -19,6 +19,8 @@ module CodeNudge where
 
 import Control.Monad.Reader
 
+import qualified Data.List as L
+
 import Foreign
 import Foreign.C
 
@@ -195,7 +197,7 @@ all_files :: CmdReaderM [FilePath]
 all_files = do
   CmdArgs { isRecursive, files } <- ask
   if isRecursive
-    then liftIO $ join . sequence <$> mapM (find always (fileType /=? Directory)) files
+    then liftIO $ L.nub . join . sequence <$> mapM (find always (fileType /=? Directory)) files
     else return files
 
 vec_size :: Ptr (Vector CxxString) -> CmdReaderM CSize
