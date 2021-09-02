@@ -58,6 +58,20 @@ $ stack --stack-yaml stack-lts-13.yaml build
 [gnu-shl-lib]: https://www.gnu.org/software/src-highlite/source-highlight-lib.html
 [stack]: https://github.com/commercialhaskell/stack
 
+## Limitations
+
+code-nudge detects any line of text in a comment which (after stripping leading
+whitespace) begins with one of:
+
+- `TODO`
+- `FIXME`
+- `XXX`
+- `NOTE`
+- `ATTN`
+
+These need not be followed by whitespace or any punctuation. It only prints the
+line in which the "to-do" is found - it won't handle multi-line to-do's.
+
 ## Reporting bugs
 
 I have hardly tested this at all, and any use of it is at your own risk.
