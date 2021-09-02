@@ -12,8 +12,8 @@ Like [`leasot`][leasot] (Hebrew for "to-do"), except not written in node.js.
 
 An unspeakable, unholy melding of Haskell and C++.
 
-Building the library or executable requires the GNU [source-highlight][src-highlight] library
-(not distributed with this package), which is licensed under the GPL (version3).
+Building the library or executable requires the GNU [source-highlight][source-highlight] library
+(not distributed with this package), which is licensed under the GPL (version 3).
 So any binaries produced from it are presumably distributable under the terms of the GPL v 3,
 too.
 
