@@ -72,6 +72,21 @@ whitespace) begins with one of:
 These need not be followed by whitespace or any punctuation. It only prints the
 line in which the "to-do" is found - it won't handle multi-line to-do's.
 
+## Languages supported
+
+The languages supported are exactly those supported by
+GNU source-highlight. There are listed on the [GNU source-highlight
+web page][source-highlight], and as of September 2021, include such
+well-known languages as:
+
+- C and C++
+- C# and Java
+- Cobol
+- Haskell
+- JavaScript and CoffeScript
+- Makefiles, and
+- shell script (what sort? I don't know, the page doesn't say).
+
 ## Reporting bugs
 
 I have hardly tested this at all, and any use of it is at your own risk.
