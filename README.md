@@ -93,6 +93,11 @@ well-known languages as:
 - Makefiles, and
 - shell script (what sort? I don't know, the page doesn't say).
 
+## Operating systems supported
+
+I've only tried building this on Linux. Probably, it can be built on MacOS as
+well; and conceivably, on Windows.
+
 ## Reporting bugs
 
 I have hardly tested this at all, and any use of it is at your own risk.
