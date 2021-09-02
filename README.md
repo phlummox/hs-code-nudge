@@ -30,7 +30,7 @@ on standard output, like this:
 
 ```
 $ code-nudge -r src
-src/SourceHighlight.hs:
+src/CodeNudge.hs:
   TODO: rewrite it all in C++, w/ CLI11 for command-line option parsing.
 ```
 
